@@ -1,0 +1,19 @@
+<launch>
+
+ <!-- lidar -->
+  <node respawn="true" pkg="hokuyo_node" type="hokuyo_node" name="hokuyo_node_1" >
+    <param name="frame_id" type="string" value="map" />
+  </node>
+
+<node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="1 0 0 0 0 0 1 link1_parent link1 100" />
+
+ <!-- extractor -->
+  <node respawn="true" pkg="lidar_geofence" type="lidar_geofence_node" name="lidar_geofence_node" output = "screen" >
+    <param name="epsi" type="double" value="0.1" />
+    <param name="dis_min" type="double" value="0.0" />
+    <param name="dis_max" type="double" value="1.0" />
+  </node>
+  
+  
+
+</launch>

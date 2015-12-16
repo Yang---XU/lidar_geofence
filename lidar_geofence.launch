@@ -1,0 +1,11 @@
+<launch>
+
+ <!-- extractor -->
+  <node respawn="true" pkg="lidar_geofence" type="lidar_geofence_node" name="lidar_geofence_node" output = "screen">
+    <param name="epsi" type="double" value="0.1" />
+    <param name="dis_min" type="double" value="0.0" />
+    <param name="dis_max" type="double" value="1.5" />
+    <param name="number_continue" type="int" value="131" />
+  </node>
+
+</launch>
